@@ -51,41 +51,4 @@
   width: 640px;
   height: 60px;
 }
-/* Responsive styles for small screens */
-@media (max-width: 768px) {
-  .accordian {
-    width: 100%;
-    height: auto;
-    margin: 20px auto;
-    box-shadow: none; /* Optional: Remove shadow for a cleaner mobile look */
-  }
-  
-  .accordian ul {
-    width: 100%;
-    display: block;
-  }
-  
-  .accordian li {
-    float: none;
-    width: 100%;
-    border: none; /* Remove the left border if it doesn't look good */
-    box-shadow: none;
-    margin-bottom: 10px;
-    transition: none; /* Disable hover transition effects */
-  }
-  
-  .accordian li img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .image_title {
-    width: 100%;
-    position: relative; /* Adjust if needed */
-    height: auto;
-    background: rgba(0, 0, 0, 0.4);
-    padding: 10px;
-  }
-}
-
 
