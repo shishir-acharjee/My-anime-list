@@ -1,0 +1,26 @@
+@media (min-width: 300px) {
+  p {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  p {
+    font-size: 19px;
+  }
+}
+
+.Fixed-parallax-background {
+  background: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+div {
+}
+
+@media (min-width: 300px) {
+  div {
+  }
+}
+
