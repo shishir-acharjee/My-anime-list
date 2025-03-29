@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Function to animate counting
-    function animateCounter(element, targetValue, duration = 2400) {
+    function animateCounter(element, targetValue, duration = 2100) {
         // Handle decimal values
         const isDecimal = !Number.isInteger(targetValue);
         const decimalPlaces = isDecimal ? 1 : 0; // For 7.5, use 1 decimal place
