@@ -20,6 +20,103 @@
     <link rel="stylesheet" href="assets/css/Responsive-Image-with-Transparent-Text.css">
     <link rel="stylesheet" href="assets/css/Stats-icons.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+         .hero-content-box {
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.85);
+            transition: all 0.3s ease;
+        }
+        
+        .hero-content-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Card Enhancements */
+        .anime-card {
+            transition: all 0.3s ease;
+            height: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .anime-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
+        }
+        
+        .card-img-container {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .anime-card img {
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .anime-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .rating-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(52, 58, 64, 0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        
+        /* Statistics Section */
+        .stats-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .stats-container:hover .stats-icon {
+            transform: scale(1.1);
+        }
+      
+     
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(0, 123, 255, 0.8);
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            z-index: 99;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-top:hover {
+            background-color: rgba(0, 123, 255, 1);
+            transform: translateY(-3px);
+        }
+        
+        /* Custom color for genre tags */
+        .genre-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            background-color: #e9ecef;
+            color: #495057;
+        }
+    </style>
 </head>
 
 <body>
@@ -27,150 +124,193 @@
         <div class="container"><a class="navbar-brand" href="#">anime suggestion</a><button data-bs-toggle="collapse" class="navbar-toggler collapsed" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse text-center" id="navcol-1">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link active" href="#">My favourite</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#">Review</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="top_50.html">Top 50</a></li>
                     <li class="nav-item"><a class="nav-link active" href="#">About me</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="d-flex justify-content-center align-items-center Fixed-parallax-background" style="height: 650px;background-image: url(&quot;assets/img/gaf203ae1b4130da325a0cee8497e41765c49cd033cf52c8bb8c19f00c11de8fdcfd62905809f5b18ec7c4ff2ea702704ea4f62af3dd6137b7ecb954e2da46786_640.webp&quot;);">
-        <div class="text-center Fixed-parallax-background-div" style="border-width: 5.4px;border-style: solid;margin-right: 10px;margin-left: 10px;padding-right: 15px;padding-left: 15px;background: rgba(255,255,255,0.78);padding-top: 30px;padding-bottom: 30px;">
+        <div class="text-center hero-content-box" style="margin-right: 10px;margin-left: 10px;padding: 40px;max-width: 600px;">
             <div class="container">
-                <h1 class="text-uppercase fw-bolder tada animated Fixed-parallax-background-heading" style="margin-bottom: 5px;"><br>Hello,it's shishir!<strong><span style="color: rgb(0, 0, 0); background-color: rgb(244, 247, 250);">!</span></strong><br><br></h1>
-                <p class="Fixed-parallax-background-paragraph" style="margin-bottom: 0px;font-weight: bold;">I became a major Ghibli fan in 2019, but if I had to pinpoint when I really started watching anime, it would be 2021. COVID brought a lot of free time, and when you're stuck inside four walls, what do you do? You watch anime with a bowl of rice on your lap..</p>
+                <h1 class="text-uppercase fw-bolder tada animated mb-4">Hello, it's Shishir!</h1>
+                <p class="mb-4" style="font-weight: bold;">I became a major Ghibli fan in 2019, but if I had to pinpoint when I really started watching anime, it would be 2021. COVID brought a lot of free time, and when you're stuck inside four walls, what do you do? You watch anime with a bowl of rice on your lap..</p>
+                <a href="#gallary" class="btn btn-dark btn-lg rounded-pill px-4 py-2 pulse animated">Explore My Collection</a>
             </div>
         </div>
     </div>
-    <div class="statistics">
-        <div style="text-align:center;">
-            <h2 class="divider-style"><span>Statistics</span></h2>
-        </div>
-        <div class="container py-4 py-xl-5">
-            <div class="row gy-4 row-cols-2 row-cols-md-4" id="gallary">
-                <div class="col">
-                    <div class="text-center d-flex flex-column justify-content-center align-items-center py-3">
-                        <div class="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-2 bs-icon lg"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check2-circle">
-                                <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0"></path>
-                                <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"></path>
-                            </svg></div>
-                        <div class="px-3">
-                            <h2 class="fw-bold mb-0">104+&nbsp;</h2>
-                            <p class="mb-0">show completed</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="text-center d-flex flex-column justify-content-center align-items-center py-3">
-                        <div class="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-2 bs-icon lg"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-film">
-                                <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2h2zm-2 3v2h2v-2zm2 3h-2v2h2z"></path>
-                            </svg></div>
-                        <div class="px-3">
-                            <h2 class="fw-bold mb-0">2k+&nbsp;</h2>
-                            <p class="mb-0">episodes</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="text-center d-flex flex-column justify-content-center align-items-center py-3">
-                        <div class="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-2 bs-icon lg"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-book">
-                                <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"></path>
-                            </svg></div>
-                        <div class="px-3">
-                            <h2 class="fw-bold mb-0">4</h2>
-                            <p class="mb-0">manga/manwa</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="text-center d-flex flex-column justify-content-center align-items-center py-3">
-                        <div class="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-2 bs-icon lg"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-pin">
-                                <path d="M4.146.146A.5.5 0 0 1 4.5 0h7a.5.5 0 0 1 .5.5c0 .68-.342 1.174-.646 1.479-.126.125-.25.224-.354.298v4.431l.078.048c.203.127.476.314.751.555C12.36 7.775 13 8.527 13 9.5a.5.5 0 0 1-.5.5h-4v4.5c0 .276-.224 1.5-.5 1.5s-.5-1.224-.5-1.5V10h-4a.5.5 0 0 1-.5-.5c0-.973.64-1.725 1.17-2.189A5.921 5.921 0 0 1 5 6.708V2.277a2.77 2.77 0 0 1-.354-.298C4.342 1.674 4 1.179 4 .5a.5.5 0 0 1 .146-.354zm1.58 1.408-.002-.001.002.001m-.002-.001.002.001A.5.5 0 0 1 6 2v5a.5.5 0 0 1-.276.447h-.002l-.012.007-.054.03a4.922 4.922 0 0 0-.827.58c-.318.278-.585.596-.725.936h7.792c-.14-.34-.407-.658-.725-.936a4.915 4.915 0 0 0-.881-.61l-.012-.006h-.002A.5.5 0 0 1 10 7V2a.5.5 0 0 1 .295-.458 1.775 1.775 0 0 0 .351-.271c.08-.08.155-.17.214-.271H5.14c.06.1.133.191.214.271a1.78 1.78 0 0 0 .37.282"></path>
-                            </svg></div>
-                        <div class="px-3">
-                            <h2 class="fw-bold mb-0">7.5</h2>
-                            <p class="mb-0">Avg rating</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <header></header>
-    <div>
-        <h1 data-aos="fade-right" data-aos-duration="200" data-aos-offset="200" id="gallary_title">2025</h1>
-        <p data-aos="fade-up" data-aos-duration="250" data-aos-offset="100" id="gallary_paragraph">these are the anime i've watched so far this year</p>
-<div class="photo-gallery">
-  <div class="container-fluid">
-    <div class="px-lg-5">
-      <div class="row">
       
-        <!-- Gallery item: Link Click -->
-        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-          <div class="bg-white rounded shadow-sm">
-            <img src="https://pics.filmaffinity.com/link_click-495682877-large.jpg" alt="Link Click" class="img-fluid card-img-top" loading="lazy">
-            <div class="p-4">
-              <h5><a href="https://www.imdb.com/title/tt14976292/" class="text-dark">Link Click</a></h5>
-              <p class="small text-muted mb-0">
-                Genre: Action, Supernatural, Adventure<br>
-                Personal Rating: 10/10
-              </p>
+    
+        <!-- Enhanced Statistics Section -->
+        <div class="statistics">
+            <div style="text-align:center;">
+                <h2 class="divider-style"><span>My Anime Stats</span></h2>
             </div>
-          </div>
-        </div>
-        <!-- End Gallery item -->
-
-        <!-- Gallery item: Dorohedoro -->
-        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-          <div class="bg-white rounded shadow-sm">
-            <img src="https://w0.peakpx.com/wallpaper/197/572/HD-wallpaper-dorohedoro-anime.jpg" alt="Dorohedoro" class="img-fluid card-img-top" loading="lazy">
-            <div class="p-4">
-              <h5><a href="https://www.imdb.com/title/tt11147852" class="text-dark">Dorohedoro</a></h5>
-              <p class="small text-muted mb-0">
-                Genre: Dark Fantasy, Action, Horror<br>
-                Personal Rating: 7/10
-              </p>
+            <div class="container py-4 py-xl-5">
+                <div class="row gy-4 row-cols-2 row-cols-md-4" id="gallary">
+                    <div class="col">
+                        <div class="text-center d-flex flex-column justify-content-center align-items-center py-3 stats-container">
+                            <div class="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-2 bs-icon lg stats-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check2-circle">
+                                    <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0"></path>
+                                    <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"></path>
+                                </svg>
+                            </div>
+                            <div class="px-3">
+                                <h2 class="fw-bold mb-0 counter">104+</h2>
+                                <p class="mb-0">Shows Completed</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="text-center d-flex flex-column justify-content-center align-items-center py-3 stats-container">
+                            <div class="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-2 bs-icon lg stats-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-film">
+                                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2h2zm-2 3v2h2v-2zm2 3h-2v2h2z"></path>
+                                </svg>
+                            </div>
+                            <div class="px-3">
+                                <h2 class="fw-bold mb-0 counter">2000+</h2>
+                                <p class="mb-0">Episodes Watched</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="text-center d-flex flex-column justify-content-center align-items-center py-3 stats-container">
+                            <div class="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-2 bs-icon lg stats-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-book">
+                                    <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"></path>
+                                </svg>
+                            </div>
+                            <div class="px-3">
+                                <h2 class="fw-bold mb-0 counter">4</h2>
+                                <p class="mb-0">Manga/Manhwa Read</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="text-center d-flex flex-column justify-content-center align-items-center py-3 stats-container">
+                            <div class="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-2 bs-icon lg stats-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-star-fill">
+                                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                </svg>
+                            </div>
+                            <div class="px-3">
+                                <h2 class="fw-bold mb-0">7.5</h2>
+                                <p class="mb-0">Average Rating</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <!-- End Gallery item -->
-
-        <!-- Gallery item: Summertime Rendering -->
-        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-          <div class="bg-white rounded shadow-sm">
-            <img src="https://cdn.myanimelist.net/images/anime/1440/120138l.jpg" alt="Summertime Rendering" class="img-fluid card-img-top" loading="lazy">
-            <div class="p-4">
-              <h5><a href="https://www.imdb.com/title/tt15686254" class="text-dark">Summertime Render</a></h5>
-              <p class="small text-muted mb-0">
-                Genre: Mystery, Supernatural Thriller<br>
-                Personal Rating: 9.5/10
-              </p>
+    
+        <!-- Enhanced 2025 Collection -->
+        <div class="container">
+            <h1 data-aos="fade-right" data-aos-duration="200" data-aos-offset="200" id="gallary_title" class="mt-5">2025 Collection</h1>
+            <p data-aos="fade-up" data-aos-duration="250" data-aos-offset="100" id="gallary_paragraph" class="mb-4">These are the anime I've watched so far this year</p>
+            
+          
+            
+            <!-- Enhanced Gallery with Cards -->
+            <div class="row g-4">
+                <!-- Link Click Card -->
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="anime-card bg-white rounded shadow-sm position-relative">
+                        <div class="card-img-container">
+                            <img src="https://pics.filmaffinity.com/link_click-495682877-large.jpg" alt="Link Click" class="img-fluid w-100">
+                            <span class="rating-badge">10/10</span>
+                        </div>
+                        <div class="p-3">
+                            <h5 class="mb-2"><a href="https://www.imdb.com/title/tt14976292/" class="text-dark text-decoration-none">Link Click</a></h5>
+                            <div class="mb-2">
+                                <span class="genre-tag">Action</span>
+                                <span class="genre-tag">Supernatural</span>
+                                <span class="genre-tag">Adventure</span>
+                            </div>
+                            <p class="small text-muted mb-3">A duo that can enter people's photos and change the past, help clients fulfill their wishes, but unexpected events arise with each mission.</p>
+                            <div class="d-grid">
+                                <a href="#" class="btn btn-sm btn-outline-dark">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dorohedoro Card -->
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="anime-card bg-white rounded shadow-sm position-relative">
+                        <div class="card-img-container">
+                            <img src="https://w0.peakpx.com/wallpaper/197/572/HD-wallpaper-dorohedoro-anime.jpg" alt="Dorohedoro" class="img-fluid w-100">
+                            <span class="rating-badge">7/10</span>
+                        </div>
+                        <div class="p-3">
+                            <h5 class="mb-2"><a href="https://www.imdb.com/title/tt11147852" class="text-dark text-decoration-none">Dorohedoro</a></h5>
+                            <div class="mb-2">
+                                <span class="genre-tag">Dark Fantasy</span>
+                                <span class="genre-tag">Action</span>
+                                <span class="genre-tag">Horror</span>
+                            </div>
+                            <p class="small text-muted mb-3">In a city where sorcerers have transformed humans into monsters, a man with a lizard head searches for the one who cursed him.</p>
+                            <div class="d-grid">
+                                <a href="#" class="btn btn-sm btn-outline-dark">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Summertime Rendering Card -->
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="anime-card bg-white rounded shadow-sm position-relative">
+                        <div class="card-img-container">
+                            <img src="https://cdn.myanimelist.net/images/anime/1440/120138l.jpg" alt="Summertime Rendering" class="img-fluid w-100">
+                            <span class="rating-badge">9.5/10</span>
+                        </div>
+                        <div class="p-3">
+                            <h5 class="mb-2"><a href="https://www.imdb.com/title/tt15686254" class="text-dark text-decoration-none">Summertime Render</a></h5>
+                            <div class="mb-2">
+                                <span class="genre-tag">Mystery</span>
+                                <span class="genre-tag">Supernatural</span>
+                                <span class="genre-tag">Thriller</span>
+                            </div>
+                            <p class="small text-muted mb-3">After his childhood friend's death, Shinpei returns to his island hometown and gets caught in a mystery involving time loops and doppelgangers.</p>
+                            <div class="d-grid">
+                                <a href="#" class="btn btn-sm btn-outline-dark">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Apothecary Card -->
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="anime-card bg-white rounded shadow-sm position-relative">
+                        <div class="card-img-container">
+                            <img src="https://cdn.myanimelist.net/images/anime/1377/146200l.jpg" alt="Apothecary Season 2" class="img-fluid w-100">
+                            <span class="rating-badge">9/10</span>
+                        </div>
+                        <div class="p-3">
+                            <h5 class="mb-2"><a href="https://www.imdb.com/title/tt26743760/" class="text-dark text-decoration-none">Apothecary Season 2</a></h5>
+                            <div class="mb-2">
+                                <span class="genre-tag">Historical</span>
+                                <span class="genre-tag">Drama</span>
+                                <span class="genre-tag">Supernatural</span>
+                            </div>
+                            <p class="small text-muted mb-3">The continued story of an apothecary and his apprentice treating patients with mysterious ailments in a historical setting.</p>
+                            <div class="d-grid">
+                                <a href="#" class="btn btn-sm btn-outline-dark">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <!-- End Gallery item -->
-
-        <!-- Gallery item: Apothecary Season 2 -->
-        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-          <div class="bg-white rounded shadow-sm">
-            <img src="https://cdn.myanimelist.net/images/anime/1377/146200l.jpg" alt="Apothecary Season 2" class="img-fluid card-img-top" loading="lazy">
-            <div class="p-4">
-              <h5><a href="https://www.imdb.com/title/tt26743760/" class="text-dark">Apothecary Season 2</a></h5>
-              <p class="small text-muted mb-0">
-                Genre: Historical, Drama, Supernatural<br>
-                Personal Rating: 9/10
-              </p>
+            
+            <!-- Load More Button -->
+            <div class="text-center mt-4 mb-5">
+                <button class="btn btn-outline-dark btn-lg px-4">Load More Anime</button>
             </div>
-          </div>
         </div>
-        <!-- End Gallery item -->
-
-      </div>
-    </div>
-  </div>
-</div>
-
-    </div>
+    
+    
     <div class="random">
       <div>
           <div class="ritt-container"><img data-bss-hover-animate="pulse" src="https://wallpapercave.com/wp/wp12351670.jpg" style="width:100%">

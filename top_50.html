@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Top 50 Anime</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese&amp;display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
+  <link rel="stylesheet" href="assets/css/aos.min.css">
+  <link rel="stylesheet" href="assets/css/animate.min.css">
+  <link rel="stylesheet" href="assets/css/Animated-Toggle-NavBar-BS5.css">
+  <link rel="stylesheet" href="assets/css/Articles-Cards-images.css">
+  <link rel="stylesheet" href="assets/css/Bold-BS4-CSS-Image-Slider.css">
+  <link rel="stylesheet" href="assets/css/divider-text-middle.css">
+  <link rel="stylesheet" href="assets/css/Fixed-parallax-background-with-heading-and-paragraph-in-the-centre.css">
+  <link rel="stylesheet" href="assets/css/Lightbox-Gallery-baguetteBox.min.css">
+  <link rel="stylesheet" href="assets/css/Responsive-footer.css">
+  <link rel="stylesheet" href="assets/css/Responsive-Image-with-Transparent-Text.css">
+  <link rel="stylesheet" href="assets/css/Stats-icons.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    body {
+      font-family: 'Raleway', sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    .hero-section {
+      background-image: url('https://wallpapercave.com/wp/wp5114783.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      height: 500px;
+      position: relative;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-content {
+      text-align: center;
+      color: white;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.5);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      max-width: 800px;
+    }
+
+    .anime-card {
+      transition: transform 0.3s, box-shadow 0.3s;
+      margin-bottom: 30px;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .anime-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .anime-image {
+      height: 350px;
+      object-fit: cover;
+    }
+
+    .rank-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 18px;
+      border: 2px solid #fff;
+    }
+
+    .category-filter {
+      margin-bottom: 30px;
+    }
+
+    .filter-btn {
+      margin: 5px;
+      border-radius: 20px;
+      padding: 8px 15px;
+      font-weight: 500;
+    }
+
+    .divider-style {
+      margin: 30px auto;
+      position: relative;
+      text-align: center;
+      overflow: hidden;
+      font-weight: bold;
+      font-size: 2rem;
+    }
+
+    .divider-style span {
+      display: inline-block;
+      position: relative;
+      padding: 0 20px;
+    }
+
+    .divider-style span:before,
+    .divider-style span:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 100vw;
+      height: 1px;
+      background-color: #ccc;
+    }
+
+    .divider-style span:before {
+      right: 100%;
+    }
+
+    .divider-style span:after {
+      left: 100%;
+    }
+
+    .card-img-overlay {
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      transition: opacity 0.3s;
+      opacity: 0;
+    }
+
+    .anime-card:hover .card-img-overlay {
+      opacity: 1;
+    }
+
+    .genre-badge {
+      display: inline-block;
+      margin: 2px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 12px;
+      padding: 4px 8px;
+      font-size: 0.7em;
+    }
+
+    .top-picks {
+      background-color: #222;
+      color: white;
+      padding: 60px 0;
+    }
+
+    .stats-section {
+      background-color: #f1f1f1;
+      padding: 50px 0;
+    }
+
+    .bs-icon {
+      --bs-primary-rgb: 13, 110, 253;
+      --bs-primary: rgb(var(--bs-primary-rgb));
+      display: flex;
+      width: 3.5rem;
+      height: 3.5rem;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--bs-primary);
+      border-radius: 50%;
+      background-color: rgba(var(--bs-primary-rgb), 0.2);
+    }
+
+    .bs-icon.bs-icon-primary {
+      color: white;
+      background-color: var(--bs-primary);
+    }
+
+    .bs-icon.bs-icon-xl {
+      width: 5rem;
+      height: 5rem;
+      font-size: 2.5rem;
+    }
+
+    .about-section {
+      background-color: white;
+      padding: 60px 0;
+    }
+
+    .top-10-section {
+      background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 60px 0;
+      color: white;
+    }
+
+    .top-10-card {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: none;
+      backdrop-filter: blur(5px);
+      height: 100%;
+    }
+
+    .float-nav {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 1000;
+    }
+
+    .float-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      margin-bottom: 10px;
+    }
+
+    #scrollToTop {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .anime-image {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar fixed-top bg-dark navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Top 50 Anime</a>
+      <button data-bs-toggle="collapse" class="navbar-toggler collapsed" data-bs-target="#navcol-1">
+        <span class="visually-hidden">Toggle navigation</span>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse text-center" id="navcol-1">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="top_50.html">Top 50</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">About me</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">Top 50 Anime of All Time</h1>
+        <p class="animate__animated animate__fadeInUp">A curated collection of the most impactful, beloved, and groundbreaking anime series that have defined the medium across generations.</p>
+        <a href="#all-anime" class="btn btn-primary btn-lg animate__animated animate__bounceIn animate__delay-1s">Explore the List</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats Section -->
+  <div class="stats-section" data-aos="fade-up">
+    <div class="container">
+      <div class="row gy-4 row-cols-2 row-cols-md-4">
+        <div class="col">
+          <div class="text-center d-flex flex-column justify-content-center align-items-center py-3">
+            <div class="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-2 bs-icon lg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-film">
+                <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2h2zm-2 3v2h2v-2zm2 3h-2v2h2z"></path>
+              </svg>
+            </div>
+            <div class="px-3">
+              <h2 class="fw-bold mb-0">50</h2>
+              <p class="mb-0">Top Anime</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="text-center d-flex flex-column justify-content-center align-items-center py-3">
+            <div class="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-2 bs-icon lg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-star-fill">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+              </svg>
+            </div>
+            <div class="px-3">
+              <h2 class="fw-bold mb-0">15+</h2>
+              <p class="mb-0">Different Genres</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="text-center d-flex flex-column justify-content-center align-items-center py-3">
+            <div class="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-2 bs-icon lg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-calendar-check">
+                <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+              </svg>
+            </div>
+            <div class="px-3">
+              <h2 class="fw-bold mb-0">40+</h2>
+              <p class="mb-0">Years of Anime</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="text-center d-flex flex-column justify-content-center align-items-center py-3">
+            <div class="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-2 bs-icon lg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-heart-fill">
+                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+              </svg>
+            </div>
+            <div class="px-3">
+              <h2 class="fw-bold mb-0">8.5+</h2>
+              <p class="mb-0">Average Rating</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top 10 Section -->
+  <section class="top-10-section" id="top-10" data-aos="fade-up">
+    <div class="container">
+      <h2 class="text-center mb-5">The Elite Ten - Cream of the Crop</h2>
+      <div class="row g-4">
+        <!-- Top 10 anime cards (example entries) -->
+        <!-- Card 1 -->
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card top-10-card">
+            <div class="position-relative">
+              <img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" class="card-img-top" alt="Fullmetal Alchemist: Brotherhood">
+              <div class="rank-badge">1</div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Fullmetal Alchemist: Brotherhood</h5>
+              <p class="card-text">Two brothers search for the Philosopher's Stone after an attempt to revive their deceased mother goes wrong.</p>
+              <div class="d-flex flex-wrap">
+                <span class="genre-badge">Action</span>
+                <span class="genre-badge">Adventure</span>
+                <span class="genre-badge">Drama</span>
+                <span class="genre-badge">Fantasy</span>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent border-top-0">
+              <small class="text-white-50">9.0/10 Rating</small>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card top-10-card">
+            <div class="position-relative">
+              <img src="https://cdn.myanimelist.net/images/anime/1337/99013.jpg" class="card-img-top" alt="Steins;Gate">
+              <div class="rank-badge">2</div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Steins;Gate</h5>
+              <p class="card-text">A self-proclaimed mad scientist discovers a method to alter the past by sending text messages through time.</p>
+              <div class="d-flex flex-wrap">
+                <span class="genre-badge">Sci-Fi</span>
+                <span class="genre-badge">Thriller</span>
+                <span class="genre-badge">Drama</span>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent border-top-0">
+              <small class="text-white-50">9.1/10 Rating</small>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+          <div class="card top-10-card">
+            <div class="position-relative">
+              <img src="https://cdn.myanimelist.net/images/anime/1286/99889.jpg" class="card-img-top" alt="Hunter x Hunter (2011)">
+              <div class="rank-badge">3</div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Hunter x Hunter (2011)</h5>
+              <p class="card-text">A young boy sets out on a journey to become a Hunter and find his missing father.</p>
+              <div class="d-flex flex-wrap">
+                <span class="genre-badge">Action</span>
+                <span class="genre-badge">Adventure</span>
+                <span class="genre-badge">Fantasy</span>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent border-top-0">
+              <small class="text-white-50">9.0/10 Rating</small>
+            </div>
+          </div>
+        </div>
+        <!-- Additional top 10 cards would follow similarly... -->
+      </div>
+    </div>
+  </section>
+
+  <!-- All Anime Section -->
+  <section id="all-anime" class="py-5">
+    <div class="container">
+      <h2 class="divider-style text-center mb-4"><span>Top 50 Anime</span></h2>
+
+      <!-- Filter Section -->
+      <div class="category-filter text-center" data-aos="fade-up">
+        <p class="mb-3">Filter by genre:</p>
+        <div class="btn-group flex-wrap">
+          <button class="btn btn-outline-primary filter-btn active" data-filter="all">All</button>
+          <button class="btn btn-outline-primary filter-btn" data-filter="action">Action</button>
+          <button class="btn btn-outline-primary filter-btn" data-filter="adventure">Adventure</button>
+          <button class="btn btn-outline-primary filter-btn" data-filter="comedy">Comedy</button>
+          <button class="btn btn-outline-primary filter-btn" data-filter="drama">Drama</button>
+          <button class="btn btn-outline-primary filter-btn" data-filter="fantasy">Fantasy</button>
+          <button class="btn btn-outline-primary filter-btn" data-filter="sci-fi">Sci-Fi</button>
+          <button class="btn btn-outline-primary filter-btn" data-filter="slice-of-life">Slice of Life</button>
+        </div>
+      </div>
+
+      <!-- Anime Grid -->
+      <div class="row anime-list">
+        <!-- Example Anime Card - Rank 11 -->
+        <div class="col-md-6 col-lg-4 col-xl-3 anime-item" data-category="romance drama slice-of-life" data-aos="fade-up">
+          <div class="card anime-card position-relative">
+            <div class="rank-badge">11</div>
+            <img src="https://cdn.myanimelist.net/images/anime/5/19761.jpg" class="anime-image card-img" alt="Clannad: After Story">
+            <div class="card-img-overlay">
+              <h5 class="card-title text-white">Clannad: After Story</h5>
+              <div class="d-flex flex-wrap">
+                <span class="genre-badge">Drama</span>
+                <span class="genre-badge">Romance</span>
+                <span class="genre-badge">Slice of Life</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Additional anime cards (Ranks 12-50) can be added following the same structure -->
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section" data-aos="fade-up">
+    <div class="container">
+      <h2 class="text-center mb-4">About This List</h2>
+      <p class="lead text-center">This list is a tribute to the most iconic and influential anime series that have left an indelible mark on the world of animation. From timeless classics to modern masterpieces, every title has been selected for its storytelling, artistry, and cultural impact.</p>
+    </div>
+  </section>
+
+  <!-- Floating Scroll-to-Top Button -->
+  <div class="float-nav">
+    <button id="scrollToTop" class="btn btn-primary float-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+      <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V4.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4-.007-.007a.498.498 0 0 0-.697.007l-4 4a.5.5 0 1 0 .708.708L7.5 4.707V11.5A.5.5 0 0 0 8 12z"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+
+    // Simple filtering functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const animeItems = document.querySelectorAll('.anime-item');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        // Add active class to current button
+        button.classList.add('active');
+        const filter = button.getAttribute('data-filter');
+
+        animeItems.forEach(item => {
+          if (filter === 'all') {
+            item.style.display = 'block';
+          } else {
+            const categories = item.getAttribute('data-category').split(' ');
+            if (categories.includes(filter)) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
+
+    // Show scroll-to-top button on scroll
+    window.addEventListener('scroll', () => {
+      const btn = document.getElementById('scrollToTop');
+      if (window.pageYOffset > 300) {
+        btn.style.display = 'flex';
+      } else {
+        btn.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+
+</html>
