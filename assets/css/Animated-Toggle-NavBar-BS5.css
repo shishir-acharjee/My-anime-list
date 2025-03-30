@@ -65,3 +65,26 @@
   text-align: center;
 }
 
+.lazy-load {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.lazy-load.appear {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.photo-gallery .card-img-top {
+}
+
+.photo-gallery .card-img-top {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-gallery .card-img-top:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
